@@ -48,22 +48,23 @@ function cargarEventListeners (){
     elementos1.addEventListener('click', comprarElemento)
     elementos2.addEventListener('click', comprarElemento)
     elementos3.addEventListener('click', comprarElemento)
-    carrito.addEventListener('click', eliminarElemento)
+    carrito.addEventListener('click', eliminarElemento );
 
     vaciarCarritoBtn.addEventListener('click', vaciarCarrito)
 }
 
-function comprarElemento(e) {
-    e.preventDefault()
-    if(e.target.classList.contains('agregar-carrito')){
-        const elemento = e.target.parentElement.parentElement;
-        leerDatosElemento(elemento);
+function comprarElemento(e){
+    e.preventDefault();
+
+    if(e.target.classList.contains('agregar-carrito')) {
+       const elemento = e.target.parentElement.parentElement;
+       leerDatosElemento(elemento);
     }
-}                               
+}
 
 function leerDatosElemento(elemento) {
     const infoElemento = {
-            Imagen: elemento.querySelector('img').src,
+            Imagen:elemento.querySelector('img').src,
             titulo:elemento.querySelector('h3').textContent,
             precio:elemento.querySelector('.precio').textContent,
             id:elemento.querySelector('a').getAttribute('data-id')
@@ -72,12 +73,12 @@ function leerDatosElemento(elemento) {
     insertarCarrito(infoElemento);
 }
 
-function insertarCarrito(elemento){
+function insertarCarrito(elemento) {
     
     const row = document.createElement('tr');
     row.innerHTML = `
     <td>
-        <img src="${elemento.imagen}" width=100 >
+        <img src="${elemento.Imagen}" width =100>
     </td>
     
     <td>
@@ -88,7 +89,7 @@ function insertarCarrito(elemento){
         ${elemento.precio}
     </td>
     <td>
-        <a href="#" class"borrar" data-id="${elemento.id}">x </a>
+        <a href="#" class"borrar" data-id="${elemento.id}">X</a>
     </td>
     `;
 

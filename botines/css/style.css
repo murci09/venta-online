@@ -175,12 +175,12 @@ th, td {
 hr {
     border: 1px solid #7a7b8f16;
 }
-.promo {
+.promos {
     padding: 50px 0px;
     text-align: center;
     
 }
-.promo h2 {
+.promos h2 {
     font-size: 50px;
     color: rgb(252, 252, 252);
     margin-bottom: 35px;
@@ -363,10 +363,10 @@ hr {
     .btn-1 {
         margin: 20px 0px;
     }
-    .promo {
+    .promos {
         padding: 30px;
     }
-    .promo h2 {
+    .promos h2 {
         font-size: 40px;
         margin-bottom: 0px;
     }
